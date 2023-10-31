@@ -16,3 +16,13 @@ resource "aws_subnet" "tf-ecomm-pub-sn-A" {
     Name = "ecomm-pub-subnet-A"
   }
 }
+
+resource "aws_subnet" "tf-ecomm-pub-sn-B" {
+  vpc_id     = aws_vpc.tf-ecomm.id
+  cidr_block = "192.0.1.0/24"
+  availability_zone = "us-east-2b"
+  map_public_ip_on_launch = "true"
+  tags = {
+    Name = "ecomm-pub-subnet-B"
+  }
+}
